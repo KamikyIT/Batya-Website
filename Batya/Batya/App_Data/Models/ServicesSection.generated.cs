@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>HomePage</summary>
-	[PublishedContentModel("homePage")]
-	public partial class HomePage : PublishedContentModel
+	/// <summary>ServicesSection</summary>
+	[PublishedContentModel("servicesSection")]
+	public partial class ServicesSection : PublishedContentModel, ISectionBase
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "homePage";
+		public new const string ModelTypeAlias = "servicesSection";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public HomePage(IPublishedContent content)
+		public ServicesSection(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,45 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HomePage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ServicesSection, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Keywords
+		/// BackgroundImage
 		///</summary>
-		[ImplementPropertyType("keywords")]
-		public string Keywords
+		[ImplementPropertyType("backgroundImage")]
+		public string BackgroundImage
 		{
-			get { return this.GetPropertyValue<string>("keywords"); }
+			get { return SectionBase.GetBackgroundImage(this); }
 		}
 
 		///<summary>
-		/// Title
+		/// Description
 		///</summary>
-		[ImplementPropertyType("title")]
-		public string Title
+		[ImplementPropertyType("description")]
+		public string Description
 		{
-			get { return this.GetPropertyValue<string>("title"); }
+			get { return SectionBase.GetDescription(this); }
+		}
+
+		///<summary>
+		/// SectionMainText
+		///</summary>
+		[ImplementPropertyType("sectionMainText")]
+		public string SectionMainText
+		{
+			get { return SectionBase.GetSectionMainText(this); }
+		}
+
+		///<summary>
+		/// SectionName
+		///</summary>
+		[ImplementPropertyType("sectionName")]
+		public string SectionName
+		{
+			get { return SectionBase.GetSectionName(this); }
 		}
 	}
 }

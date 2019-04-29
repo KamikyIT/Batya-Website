@@ -1,0 +1,29 @@
+﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedContentModels.ServicesSection>
+@{ 
+    var sectionName = this.Model.SectionName;
+    var mainText = this.Model.SectionMainText;
+    var services = this.Model.Children<ItemBase>().ToArray();
+}
+
+
+<!-- Service -->
+<div id="service" class="section md-padding">
+    <div class="container">
+        <div class="row">
+            <div class="section-header text-center">
+                <h2 class="title">@mainText</h2>
+            </div>
+
+            @foreach (var service in services)
+            {
+                <div class="col-md-4 col-sm-6">
+                    <div class="service">
+                        <i class="fa fa-diamond"></i>
+                        <h3>@service.ItemName</h3>
+                        <p>@service.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

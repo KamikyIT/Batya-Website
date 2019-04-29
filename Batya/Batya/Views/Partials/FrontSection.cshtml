@@ -1,0 +1,29 @@
+﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedContentModels.FrontSection>
+@{
+    var sectionName = this.Model.SectionName;
+    var img = this.Model.BackgroundImage;
+
+    var bigText = this.Model.BigText;
+    var botText = this.Model.BotText;
+}
+
+<!-- Background Image -->
+<div class="bg-img" style="background-image: url('@img');">
+    <div class="overlay"></div>
+</div>
+
+<!-- home wrapper -->
+<div class="home-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <!-- home content -->
+            <div class="col-md-10 col-md-offset-1">
+                <div class="home-content">
+                    <h1 class="white-text">@bigText</h1>
+                    <p class="white-text">@botText</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

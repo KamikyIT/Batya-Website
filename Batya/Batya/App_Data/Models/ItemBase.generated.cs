@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>HomePage</summary>
-	[PublishedContentModel("homePage")]
-	public partial class HomePage : PublishedContentModel
+	/// <summary>ItemBase</summary>
+	[PublishedContentModel("itemBase")]
+	public partial class ItemBase : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "homePage";
+		public new const string ModelTypeAlias = "itemBase";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public HomePage(IPublishedContent content)
+		public ItemBase(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,36 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HomePage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ItemBase, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Keywords
+		/// Description
 		///</summary>
-		[ImplementPropertyType("keywords")]
-		public string Keywords
+		[ImplementPropertyType("description")]
+		public string Description
 		{
-			get { return this.GetPropertyValue<string>("keywords"); }
+			get { return this.GetPropertyValue<string>("description"); }
 		}
 
 		///<summary>
-		/// Title
+		/// Icon
 		///</summary>
-		[ImplementPropertyType("title")]
-		public string Title
+		[ImplementPropertyType("icon")]
+		public string Icon
 		{
-			get { return this.GetPropertyValue<string>("title"); }
+			get { return this.GetPropertyValue<string>("icon"); }
+		}
+
+		///<summary>
+		/// ItemName
+		///</summary>
+		[ImplementPropertyType("itemName")]
+		public string ItemName
+		{
+			get { return this.GetPropertyValue<string>("itemName"); }
 		}
 	}
 }

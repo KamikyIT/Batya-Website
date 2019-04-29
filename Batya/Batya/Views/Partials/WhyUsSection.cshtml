@@ -1,0 +1,40 @@
+﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedContentModels.WhyUsSection>
+@{ 
+    var mainText = this.Model.SectionMainText;
+    var description = this.Model.Description;
+
+    var whyItems = this.Model.Children<ItemBase>().ToArray();
+
+}
+
+<!-- Why Choose Us -->
+<div id="features" class="section md-padding bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section-header">
+                    <h2 class="title">@mainText</h2>
+                </div>
+                <p>@description</p>
+
+                @foreach (var whyItem in whyItems)
+                {
+                    <div class="feature">
+                        <i class="fa fa-check"></i>
+                        <p>@whyItem.ItemName</p>
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-md-6">
+                <div id="about-slider" class="owl-carousel owl-theme">
+                    @foreach (var whyItem in whyItems.Where(x => !string.IsNullOrEmpty(x.Icon)))
+                    {
+                        <img class="img-responsive" src="@whyItem.Icon" alt="">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

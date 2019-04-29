@@ -1,0 +1,29 @@
+﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedContentModels.ResultsSection>
+@{
+    var backgroundImage = this.Model.BackgroundImage;
+
+    var resultItems = this.Model.Children<ItemBase>().ToArray();
+}
+
+<!-- Numbers -->
+<div id="numbers" class="section sm-padding">
+
+    <div class="bg-img" style="background-image: url('@backgroundImage');">
+        <div class="overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            @foreach (var result in resultItems)
+            {
+                <div class="col-sm-3 col-xs-6">
+                    <div class="number">
+                        <i class="fa fa-users"></i>
+                        <h3 class="white-text"><span class="counter">@result.Description</span></h3>
+                        <span class="white-text">@result.ItemName</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
