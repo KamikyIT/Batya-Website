@@ -8,6 +8,7 @@
     var testimonialsSection = this.Model.Children.OfType<TestimonialsSection>().First();
     var ourTeamSection = this.Model.Children.OfType<OurTeamSection>().First();
     var contactsSection = this.Model.Children.OfType<ContactsSection>().First();
+    var pricingSection = this.Model.Children.OfType<PricingSection>().First();
 
 }
 
@@ -119,117 +120,17 @@
 
     @Html.Partial("ResultsSection", resultsSection)
 
-    <!-- Pricing -->
-    <div id="pricing" class="section md-padding">
-
-        <!-- Container -->
-        <div class="container">
-
-            <!-- Row -->
-            <div class="row">
-
-                <!-- Section header -->
-                <div class="section-header text-center">
-                    <h2 class="title">Pricing Table</h2>
-                </div>
-                <!-- /Section header -->
-                <!-- pricing -->
-                <div class="col-sm-4">
-                    <div class="pricing">
-                        <div class="price-head">
-                            <span class="price-title">Basic plan</span>
-                            <div class="price">
-                                <h3>$9<span class="duration">/ month</span></h3>
-                            </div>
-                        </div>
-                        <ul class="price-content">
-                            <li>
-                                <p>1GB Disk Space</p>
-                            </li>
-                            <li>
-                                <p>100 Email Account</p>
-                            </li>
-                            <li>
-                                <p>24/24 Support</p>
-                            </li>
-                        </ul>
-                        <div class="price-btn">
-                            <button class="outline-btn">Purchase now</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- /pricing -->
-                <!-- pricing -->
-                <div class="col-sm-4">
-                    <div class="pricing">
-                        <div class="price-head">
-                            <span class="price-title">Silver plan</span>
-                            <div class="price">
-                                <h3>$19<span class="duration">/ month</span></h3>
-                            </div>
-                        </div>
-                        <ul class="price-content">
-                            <li>
-                                <p>1GB Disk Space</p>
-                            </li>
-                            <li>
-                                <p>100 Email Account</p>
-                            </li>
-                            <li>
-                                <p>24/24 Support</p>
-                            </li>
-                        </ul>
-                        <div class="price-btn">
-                            <button class="outline-btn">Purchase now</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- /pricing -->
-                <!-- pricing -->
-                <div class="col-sm-4">
-                    <div class="pricing">
-                        <div class="price-head">
-                            <span class="price-title">Gold plan</span>
-                            <div class="price">
-                                <h3>$39<span class="duration">/ month</span></h3>
-                            </div>
-                        </div>
-                        <ul class="price-content">
-                            <li>
-                                <p>1GB Disk Space</p>
-                            </li>
-                            <li>
-                                <p>100 Email Account</p>
-                            </li>
-                            <li>
-                                <p>24/24 Support</p>
-                            </li>
-                        </ul>
-                        <div class="price-btn">
-                            <button class="outline-btn">Purchase now</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- /pricing -->
-
-            </div>
-            <!-- Row -->
-
-        </div>
-        <!-- /Container -->
-
-    </div>
-    <!-- /Pricing -->
-   
+    @Html.Partial("PricingSection", pricingSection)
+    
     @Html.Partial("TestimonialsSection", testimonialsSection)
 
     @Html.Partial("OurTeamSection", ourTeamSection)
 
-
     @Html.Partial("ContactsSection", contactsSection)
+    
     <!-- Back to top -->
     <div id="back-to-top"></div>
-    <!-- /Back to top -->
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="preloader">
@@ -239,8 +140,6 @@
             <span></span>
         </div>
     </div>
-    <!-- /Preloader -->
-
 
     @Html.Partial("JsTrash")
 

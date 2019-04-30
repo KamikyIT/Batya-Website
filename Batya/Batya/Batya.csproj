@@ -268,9 +268,11 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\magnific-popup.css" />
+    <Content Include="css\main_table.css" />
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\owl.theme.default.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\util_table.css" />
     <Content Include="default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -291,6 +293,7 @@
     <Compile Include="App_Data\Models\ItemBase.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\OurTeamSection.generated.cs" />
+    <Compile Include="App_Data\Models\PricingSection.generated.cs" />
     <Compile Include="App_Data\Models\ResultsSection.generated.cs" />
     <Compile Include="App_Data\Models\SectionBase.generated.cs" />
     <Compile Include="App_Data\Models\ServicesSection.generated.cs" />
@@ -348,6 +351,7 @@
     <Content Include="Views\Partials\TestimonialsSection.cshtml" />
     <Content Include="Views\Partials\OurTeamSection.cshtml" />
     <Content Include="Views\Partials\ContactsSection.cshtml" />
+    <Content Include="Views\Partials\PricingSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
