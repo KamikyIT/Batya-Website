@@ -1,0 +1,36 @@
+﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedContentModels.HomePage>
+
+@{ 
+    var logo = "";// this.Model.Logo;
+    var logoAlt = "";// this.Model.Logo;
+}
+
+<!-- Nav -->
+<nav id="nav" class="navbar nav-transparent">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- Logo -->
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img class="logo" src="@logo" alt="logo">
+                    <img class="logo-alt" src="@logoAlt" alt="logo">
+                </a>
+            </div>
+
+            <!-- Collapse nav button -->
+            <div class="nav-collapse">
+                <span></span>
+            </div>
+        </div>
+
+        <!--  Main navigation  -->
+        <ul class="main-nav nav navbar-nav navbar-right">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#service">Услуги</a></li>
+            <li><a href="#team">Команда</a></li>
+            <li><a href="#testimonial">Отзывы</a></li>
+            <li><a href="#pricing">Стоимость</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </div>
+</nav>

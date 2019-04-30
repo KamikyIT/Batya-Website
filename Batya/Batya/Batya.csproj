@@ -352,6 +352,7 @@
     <Content Include="Views\Partials\OurTeamSection.cshtml" />
     <Content Include="Views\Partials\ContactsSection.cshtml" />
     <Content Include="Views\Partials\PricingSection.cshtml" />
+    <Content Include="Views\Partials\NavigationPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
