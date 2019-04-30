@@ -265,8 +265,19 @@
     <Content Include="Config\Lang\ru-RU.user.xml" />
     <Content Include="Config\Lang\sv-SE.user.xml" />
     <Content Include="Config\Lang\zh-CN.user.xml" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\owl.theme.default.css" />
+    <Content Include="css\style.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="scripts\js\bootstrap.min.js" />
+    <Content Include="scripts\js\jquery.magnific-popup.js" />
+    <Content Include="scripts\js\jquery.min.js" />
+    <Content Include="scripts\js\main.js" />
+    <Content Include="scripts\js\owl.carousel.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
