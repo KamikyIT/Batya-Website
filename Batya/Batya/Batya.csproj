@@ -277,9 +277,11 @@
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\ItemBase.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\OurTeamSection.generated.cs" />
     <Compile Include="App_Data\Models\ResultsSection.generated.cs" />
     <Compile Include="App_Data\Models\SectionBase.generated.cs" />
     <Compile Include="App_Data\Models\ServicesSection.generated.cs" />
+    <Compile Include="App_Data\Models\TeamMember.generated.cs" />
     <Compile Include="App_Data\Models\TestimonialItem.generated.cs" />
     <Compile Include="App_Data\Models\TestimonialsSection.generated.cs" />
     <Compile Include="App_Data\Models\WhyUsSection.generated.cs" />
@@ -326,6 +328,7 @@
     <Content Include="Views\Partials\WhyUsSection.cshtml" />
     <Content Include="Views\Partials\ResultsSection.cshtml" />
     <Content Include="Views\Partials\TestimonialsSection.cshtml" />
+    <Content Include="Views\Partials\OurTeamSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

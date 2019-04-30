@@ -1,0 +1,39 @@
+﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedContentModels.OurTeamSection>
+@{ 
+    var sectionName = this.Model.SectionName;
+
+    var teamMembers = this.Model.Children<TeamMember>().ToArray();
+
+}
+
+<div id="team" class="section md-padding">
+    <div class="container">
+        <div class="row">
+            <div class="section-header text-center">
+                <h2 class="title">@sectionName</h2>
+            </div>
+
+            @foreach (var teamMember in teamMembers)
+            {
+                <div class="col-sm-4">
+                    <div class="team">
+                        <div class="team-img">
+                            <img class="img-responsive" src="@teamMember.Photo" alt="">
+                            @*<div class="overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </div>
+                            </div>*@
+                        </div>
+                        <div class="team-content">
+                            <h3>@teamMember.TeamMemberName</h3>
+                            <span>@teamMember.Position</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
