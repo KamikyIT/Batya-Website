@@ -1,0 +1,34 @@
+﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedContentModels.TestimonialsSection>
+@{
+    var backgroundImage = this.Model.BackgroundImage;
+
+    var testimonials = this.Model.Children<TestimonialItem>();
+}
+
+
+<!-- Testimonial -->
+<div id="testimonial" class="section md-padding">
+    <div class="bg-img" style="background-image: url('@backgroundImage');">
+        <div class="overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div id="testimonial-slider" class="owl-carousel owl-theme">
+                    @foreach (var testim in testimonials)
+                    {
+                        <div class="testimonial">
+                            <div class="testimonial-meta">
+                                <img src="@testim.Photo" alt="">
+                                <h3 class="white-text">@testim.TestimonialName</h3>
+                                <span>@testim.OrginizationPosition</span>
+                            </div>
+                            <p class="white-text">@testim.TestimonialText</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

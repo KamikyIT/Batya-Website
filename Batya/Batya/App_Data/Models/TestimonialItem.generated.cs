@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>ItemBase</summary>
-	[PublishedContentModel("itemBase")]
-	public partial class ItemBase : PublishedContentModel
+	/// <summary>TestimonialItem</summary>
+	[PublishedContentModel("testimonialItem")]
+	public partial class TestimonialItem : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "itemBase";
+		public new const string ModelTypeAlias = "testimonialItem";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ItemBase(IPublishedContent content)
+		public TestimonialItem(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,45 +40,45 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ItemBase, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TestimonialItem, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Description
+		/// OrginizationPosition
 		///</summary>
-		[ImplementPropertyType("description")]
-		public string Description
+		[ImplementPropertyType("orginizationPosition")]
+		public string OrginizationPosition
 		{
-			get { return this.GetPropertyValue<string>("description"); }
+			get { return this.GetPropertyValue<string>("orginizationPosition"); }
 		}
 
 		///<summary>
-		/// Icon
+		/// Photo
 		///</summary>
-		[ImplementPropertyType("icon")]
-		public string Icon
+		[ImplementPropertyType("photo")]
+		public string Photo
 		{
-			get { return this.GetPropertyValue<string>("icon"); }
+			get { return this.GetPropertyValue<string>("photo"); }
 		}
 
 		///<summary>
-		/// IconClass
+		/// TestimonialName
 		///</summary>
-		[ImplementPropertyType("iconClass")]
-		public string IconClass
+		[ImplementPropertyType("testimonialName")]
+		public string TestimonialName
 		{
-			get { return this.GetPropertyValue<string>("iconClass"); }
+			get { return this.GetPropertyValue<string>("testimonialName"); }
 		}
 
 		///<summary>
-		/// ItemName
+		/// TestimonialText
 		///</summary>
-		[ImplementPropertyType("itemName")]
-		public string ItemName
+		[ImplementPropertyType("testimonialText")]
+		public string TestimonialText
 		{
-			get { return this.GetPropertyValue<string>("itemName"); }
+			get { return this.GetPropertyValue<string>("testimonialText"); }
 		}
 	}
 }

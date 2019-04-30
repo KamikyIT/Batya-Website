@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>ItemBase</summary>
-	[PublishedContentModel("itemBase")]
-	public partial class ItemBase : PublishedContentModel
+	/// <summary>TestimonialsSection</summary>
+	[PublishedContentModel("testimonialsSection")]
+	public partial class TestimonialsSection : PublishedContentModel, ISectionBase
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "itemBase";
+		public new const string ModelTypeAlias = "testimonialsSection";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ItemBase(IPublishedContent content)
+		public TestimonialsSection(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,9 +40,18 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ItemBase, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TestimonialsSection, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// BackgroundImage
+		///</summary>
+		[ImplementPropertyType("backgroundImage")]
+		public string BackgroundImage
+		{
+			get { return SectionBase.GetBackgroundImage(this); }
 		}
 
 		///<summary>
@@ -51,34 +60,25 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("description")]
 		public string Description
 		{
-			get { return this.GetPropertyValue<string>("description"); }
+			get { return SectionBase.GetDescription(this); }
 		}
 
 		///<summary>
-		/// Icon
+		/// SectionMainText
 		///</summary>
-		[ImplementPropertyType("icon")]
-		public string Icon
+		[ImplementPropertyType("sectionMainText")]
+		public string SectionMainText
 		{
-			get { return this.GetPropertyValue<string>("icon"); }
+			get { return SectionBase.GetSectionMainText(this); }
 		}
 
 		///<summary>
-		/// IconClass
+		/// SectionName
 		///</summary>
-		[ImplementPropertyType("iconClass")]
-		public string IconClass
+		[ImplementPropertyType("sectionName")]
+		public string SectionName
 		{
-			get { return this.GetPropertyValue<string>("iconClass"); }
-		}
-
-		///<summary>
-		/// ItemName
-		///</summary>
-		[ImplementPropertyType("itemName")]
-		public string ItemName
-		{
-			get { return this.GetPropertyValue<string>("itemName"); }
+			get { return SectionBase.GetSectionName(this); }
 		}
 	}
 }
