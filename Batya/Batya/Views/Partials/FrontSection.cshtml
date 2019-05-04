@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoViewPage<Umbraco.Web.PublishedContentModels.FrontSection>
 @{
     var sectionName = this.Model.SectionName;
-    var img = this.Model.BackgroundImage;
+    var img = Umbraco.Media(this.Model.BackgroundImage).Url;
 
     var bigText = this.Model.BigText;
     var botText = this.Model.BotText;
